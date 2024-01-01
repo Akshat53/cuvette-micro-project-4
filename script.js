@@ -1,18 +1,24 @@
-let result = document.getElementById("result");
-let b1 = document.getElementById("num1");
-let b2 = document.getElementById("num2");
-let b3 = document.getElementById("num3");
-let b4 = document.getElementById("num4");
-let b5 = document.getElementById("num5");
-let b6 = document.getElementById("num6");
-let b7 = document.getElementById("num7");
-let b8 = document.getElementById("num8");
-let b9 = document.getElementById("num9");
-let b0 = document.getElementById("num0");
-let add = document.getElementById("plus");
-let sub = document.getElementById("minus");
-let division = document.getElementById("divide");
-let point = document.getElementById("point");
-let mul = document.getElementById("mul");
-let equal = document.getElementById("equal");
-let reset = document.getElementById("reset");
+let buttons = document.querySelectorAll(".button");
+let inputField = document.getElementById('result'); // Changed from querySelector
+let string = "";
+
+Array.from(buttons).forEach((button) => {
+  button.addEventListener("click", (e) => {
+    const buttonText = e.target.innerHTML.trim(); // Trim whitespace from inner HTML
+
+    if (buttonText === "=") {
+      string = eval(string);
+      inputField.value = string;
+    } else if (buttonText === 'reset') {
+      string = '';
+      inputField.value = string;
+    } else if (button.classList.contains('del')) {
+      string = string.slice(0, -1);
+      inputField.value = string;
+    } else {
+      string = string + buttonText;
+      inputField.value = string;
+      console.log(string);
+    }
+  });
+});
