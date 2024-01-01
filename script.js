@@ -7,7 +7,7 @@ Array.from(buttons).forEach((button) => {
   button.addEventListener("click", (e) => {
     const buttonText = e.target.innerHTML.trim();
 
-    const isOperator = ["+", "-", "x", "/"].includes(buttonText);
+    const isOperator = ["+", "x", "/"].includes(buttonText);
 
     if (buttonText === "=") {
       result = eval(expression.replace(/x/g, "*"));
@@ -35,7 +35,7 @@ Array.from(buttons).forEach((button) => {
 function enableOperatorButtons() {
   buttons.forEach((btn) => {
     if (
-      ["+", "-", "x", "/"].includes(btn.innerHTML.trim()) &&
+      ["+", "x", "/"].includes(btn.innerHTML.trim()) &&
       inputField.value !== ""
     ) {
       btn.disabled = false;
