@@ -26,10 +26,10 @@ This project is a simple web-based calculator created as a micro project for the
 ## Screenshots
 
 ![Calculator Screenshot 1](./ss1.png)
-*Description of the screenshot (e.g., Basic Calculator View)*
+
 
 ![Calculator Screenshot 2](./ss2.png)
-*Description of the screenshot (e.g., Calculator performing a calculation)*
+
 
 ## Contributing
 
